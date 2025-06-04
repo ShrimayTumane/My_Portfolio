@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { ArrowDown, Download, Mail, Linkedin, Code, Palette, Database, Globe } from 'lucide-react';
+import { ArrowDown, Download, Mail, Linkedin, Code, Palette, Database, Globe, Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -102,53 +102,121 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
+        {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/30" />
+          
+          {/* Floating Particles */}
+          <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60" />
+          <div className="absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full animate-pulse opacity-40 animation-delay-1000" />
+          <div className="absolute top-60 left-1/4 w-1.5 h-1.5 bg-pink-400 rounded-full animate-pulse opacity-50 animation-delay-2000" />
+          <div className="absolute bottom-40 right-1/3 w-2 h-2 bg-blue-300 rounded-full animate-pulse opacity-30 animation-delay-3000" />
+          <div className="absolute bottom-60 left-1/2 w-1 h-1 bg-purple-300 rounded-full animate-pulse opacity-70 animation-delay-500" />
+          
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float animation-delay-2000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/5 rounded-full blur-2xl animate-float animation-delay-1000" />
         </div>
         
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="mb-8 animate-fade-in">
-            <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-6xl font-bold">
-                  ST
+        <div className="container mx-auto px-6 text-center relative z-10 max-w-5xl">
+          {/* Profile Image */}
+          <div className="mb-12 animate-fade-in">
+            <div className="relative inline-block">
+              <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 shadow-2xl">
+                <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                  <div className="w-36 h-36 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-4xl font-bold">
+                    ST
+                  </div>
                 </div>
+              </div>
+              {/* Floating Icons */}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center animate-bounce">
+                <Code className="w-4 h-4 text-blue-400" />
+              </div>
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center animate-bounce animation-delay-500">
+                <Palette className="w-4 h-4 text-purple-400" />
               </div>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in delay-300">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Shrimay Tumane
+          {/* Greeting */}
+          <div className="mb-6 animate-fade-in delay-300">
+            <span className="text-lg text-blue-400 font-medium tracking-wide">Hello, I'm</span>
+          </div>
+          
+          {/* Main Title */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in delay-500">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent block">
+              Shrimay
+            </span>
+            <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent block">
+              Tumane
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in delay-500">
-            Aspiring Full-Stack Developer & UI/UX Designer
-          </p>
+          {/* Subtitle */}
+          <div className="mb-8 animate-fade-in delay-700">
+            <p className="text-xl md:text-2xl text-gray-300 mb-2">
+              Aspiring Full-Stack Developer & UI/UX Designer
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Solving problems through code and creativity • Building the future one pixel at a time
+            </p>
+          </div>
           
-          <p className="text-lg text-gray-400 mb-8 animate-fade-in delay-700">
-            Solving problems through code and creativity
-          </p>
+          {/* Tech Stack Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in delay-1000">
+            {['Python', 'React', 'Java', 'UI/UX', 'MongoDB'].map((tech) => (
+              <span 
+                key={tech}
+                className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-full text-sm text-gray-300 hover:border-blue-400/50 hover:text-blue-400 transition-all duration-300 cursor-default"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-1000">
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-              <Download className="mr-2 h-5 w-5" />
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in delay-1000">
+            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 group">
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume
             </Button>
             <Button 
               variant="outline" 
               onClick={() => scrollToSection('contact')}
-              className="border-blue-500 text-blue-400 hover:bg-blue-500/10 px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-blue-500/30 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400 px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 backdrop-blur-sm group"
             >
+              <Mail className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Let's Connect
             </Button>
           </div>
           
+          {/* Social Links */}
+          <div className="flex justify-center space-x-6 mb-12 animate-fade-in delay-1000">
+            <a 
+              href="https://linkedin.com/in/shrimay-tumane-6b5a96277"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-gray-800/50 border border-gray-700/50 rounded-full flex items-center justify-center hover:border-blue-400/50 hover:bg-blue-500/10 transition-all duration-300 transform hover:scale-110 group"
+            >
+              <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
+            </a>
+            <a 
+              href="#"
+              className="w-12 h-12 bg-gray-800/50 border border-gray-700/50 rounded-full flex items-center justify-center hover:border-purple-400/50 hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-110 group"
+            >
+              <Github className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
+            </a>
+          </div>
+          
+          {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ArrowDown className="h-6 w-6 text-gray-400" />
+            <div className="flex flex-col items-center space-y-2">
+              <span className="text-xs text-gray-500 tracking-wide">SCROLL DOWN</span>
+              <ArrowDown className="h-5 w-5 text-gray-400" />
+            </div>
           </div>
         </div>
       </section>
