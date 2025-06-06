@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { ArrowDown, Download, Mail, Linkedin, Code, Palette, Database, Globe, Github, ExternalLink, Camera, MapPin, Calendar, Monitor, Cpu, Zap, Layers, Terminal, Server, Smartphone, Lightbulb } from 'lucide-react';
+import { ArrowDown, Download, Mail, Linkedin, Code, Palette, Database, Globe, Github, ExternalLink, Camera, MapPin, Calendar, Monitor, Cpu, Zap, Layers, Terminal, Server, Smartphone, Lightbulb, Star, Rocket, Orbit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -43,22 +42,47 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          animation: 'pulse 4s ease-in-out infinite'
-        }}></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white overflow-x-hidden relative">
+      {/* Cosmic Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Stars */}
+        <div className="absolute inset-0 bg-stars opacity-60"></div>
+        
+        {/* Nebula Effect */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-50"></div>
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-radial from-cyan-900/30 via-transparent to-transparent opacity-40 animate-pulse-slow"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gradient-radial from-pink-900/25 via-transparent to-transparent opacity-30 animate-float-slow"></div>
+        
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-70 animate-twinkle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+        
+        {/* Large Floating Orbs */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-radial from-cyan-500/10 to-transparent rounded-full animate-float-reverse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-radial from-purple-500/10 to-transparent rounded-full animate-float-slow"></div>
       </div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-purple-500/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-2xl border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Shrimay Tumane
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <Rocket className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Shrimay Tumane
+              </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               {[
@@ -73,9 +97,9 @@ const Index = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 relative ${
                     activeSection === item.id 
-                      ? 'text-cyan-400 glow-text' 
+                      ? 'text-cyan-400 after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-cyan-400 after:to-purple-400' 
                       : 'text-gray-300 hover:text-cyan-400'
                   }`}
                 >
@@ -89,19 +113,17 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Floating Orbs */}
-        <div className="absolute inset-0">
-          <div className="floating-orb bg-gradient-to-r from-cyan-400 to-blue-500 w-72 h-72 rounded-full blur-3xl opacity-20 animate-float-slow"></div>
-          <div className="floating-orb-2 bg-gradient-to-r from-purple-400 to-pink-500 w-96 h-96 rounded-full blur-3xl opacity-20 animate-float-reverse"></div>
-          <div className="floating-orb-3 bg-gradient-to-r from-green-400 to-cyan-500 w-64 h-64 rounded-full blur-3xl opacity-20 animate-float-fast"></div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          {/* Profile Picture */}
+          {/* Profile Picture with Cosmic Ring */}
           <div className="mb-12 animate-fade-in-up">
             <div className="relative inline-block">
-              <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 p-1 animate-pulse-glow">
-                <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+              {/* Orbital Rings */}
+              <div className="absolute inset-0 w-48 h-48 border border-cyan-500/30 rounded-full animate-spin-slow"></div>
+              <div className="absolute inset-2 w-44 h-44 border border-purple-500/20 rounded-full animate-spin-reverse"></div>
+              
+              {/* Profile Container */}
+              <div className="relative w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 p-1 animate-glow-pulse">
+                <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center overflow-hidden border-2 border-slate-800">
                   <img 
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
                     alt="Shrimay Tumane"
@@ -109,92 +131,121 @@ const Index = () => {
                   />
                 </div>
               </div>
-              {/* Tech Icons around profile */}
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center animate-bounce">
-                <Code className="w-4 h-4 text-white" />
+              
+              {/* Floating Tech Icons */}
+              <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center animate-orbit-1">
+                <Code className="w-5 h-5 text-white" />
               </div>
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center animate-bounce delay-100">
-                <Terminal className="w-4 h-4 text-white" />
+              <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center animate-orbit-2">
+                <Terminal className="w-5 h-5 text-white" />
+              </div>
+              <div className="absolute top-0 -left-6 w-8 h-8 bg-gradient-to-r from-green-400 to-cyan-500 rounded-full flex items-center justify-center animate-orbit-3">
+                <Database className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="space-y-8 animate-fade-in-up delay-200">
-            <div className="space-y-4">
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
-                <span className="block text-white animate-slide-in-left">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-slide-in-right glow-text">
-                  Shrimay Tumane
-                </span>
-              </h1>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <p className="text-cyan-400 font-medium tracking-wider text-sm uppercase animate-slide-in-left">
+                  Welcome to my digital universe
+                </p>
+                <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
+                  <span className="block text-white animate-slide-in-left delay-100">Hi, I'm</span>
+                  <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-slide-in-right delay-200 cosmic-glow">
+                    Shrimay Tumane
+                  </span>
+                </h1>
+              </div>
               
-              <div className="text-xl md:text-2xl text-gray-300 space-y-2 animate-fade-in delay-300">
-                <p className="typing-animation">Full-Stack Developer</p>
-                <p className="text-cyan-400">& UI/UX Designer</p>
+              <div className="text-xl md:text-3xl font-light text-gray-300 space-y-2 animate-fade-in delay-300">
+                <p className="bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
+                  Full-Stack Developer
+                </p>
+                <p className="text-lg text-cyan-400">& Digital Experience Creator</p>
               </div>
             </div>
 
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-400">
-              Crafting digital experiences with cutting-edge technology and innovative design solutions
+              Crafting digital experiences across the technology spectrum with cutting-edge solutions 
+              that push the boundaries of what's possible in the digital universe.
             </p>
 
-            {/* Tech Stack Pills */}
-            <div className="flex flex-wrap justify-center gap-3 pt-6 animate-fade-in delay-500">
-              {['React', 'TypeScript', 'Python', 'Node.js', 'UI/UX'].map((tech, index) => (
-                <span 
-                  key={tech}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 rounded-full text-sm font-medium text-cyan-300 hover:scale-105 transition-transform duration-300 animate-fade-in-up"
+            {/* Tech Stack Constellation */}
+            <div className="flex flex-wrap justify-center gap-4 pt-8 animate-fade-in delay-500">
+              {[
+                { name: 'React', color: 'from-cyan-500 to-blue-600' },
+                { name: 'TypeScript', color: 'from-blue-500 to-indigo-600' },
+                { name: 'Python', color: 'from-green-500 to-teal-600' },
+                { name: 'Node.js', color: 'from-emerald-500 to-green-600' },
+                { name: 'UI/UX', color: 'from-purple-500 to-pink-600' }
+              ].map((tech, index) => (
+                <div 
+                  key={tech.name}
+                  className={`group relative px-6 py-3 bg-gradient-to-r ${tech.color} bg-opacity-10 border border-current/20 rounded-full text-sm font-medium text-white hover:scale-105 transition-all duration-300 animate-fade-in-up cosmic-pill`}
                   style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
-                  {tech}
-                </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-full"></div>
+                  <span className="relative z-10">{tech.name}</span>
+                </div>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in delay-700">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12 animate-fade-in delay-700">
               <Button 
-                className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-3 text-base font-medium rounded-full hover:scale-105 transition-all duration-300 glow-button"
+                className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 hover:from-cyan-600 hover:via-purple-600 hover:to-pink-600 text-white px-10 py-4 text-lg font-medium rounded-full hover:scale-105 transition-all duration-300 cosmic-button"
                 onClick={() => scrollToSection('contact')}
               >
-                <Zap className="mr-2 h-4 w-4" />
-                Let's Connect
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <span className="relative flex items-center">
+                  <Rocket className="mr-3 h-5 w-5" />
+                  Launch Connection
+                </span>
               </Button>
               <Button 
                 variant="outline" 
-                className="border-2 border-purple-500 text-purple-300 hover:bg-purple-500/20 px-8 py-3 text-base font-medium rounded-full hover:scale-105 transition-all duration-300"
+                className="group relative border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 px-10 py-4 text-lg font-medium rounded-full hover:scale-105 transition-all duration-300 backdrop-blur-sm"
               >
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
+                <span className="relative flex items-center">
+                  <Download className="mr-3 h-5 w-5" />
+                  Download CV
+                </span>
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center space-x-6 pt-8 animate-fade-in delay-800">
+            <div className="flex justify-center space-x-8 pt-12 animate-fade-in delay-800">
               <a 
                 href="https://linkedin.com/in/shrimay-tumane-6b5a96277"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-125 transform"
+                className="group relative w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 backdrop-blur-sm"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-5 h-5 text-cyan-400 group-hover:text-white transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </a>
               <a 
                 href="#"
-                className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-125 transform"
+                className="group relative w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 backdrop-blur-sm"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-5 h-5 text-purple-400 group-hover:text-white transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </a>
             </div>
           </div>
 
-          {/* Scroll Indicator */}
+          {/* Cosmic Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in delay-1000">
-            <div className="flex flex-col items-center space-y-2 text-gray-400">
-              <span className="text-xs tracking-wider">SCROLL TO EXPLORE</span>
-              <div className="w-6 h-10 border-2 border-purple-500 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-gradient-to-b from-cyan-400 to-purple-500 rounded-full mt-2 animate-bounce"></div>
+            <div className="flex flex-col items-center space-y-4 text-gray-400">
+              <span className="text-xs tracking-wider uppercase font-medium">Explore the Universe</span>
+              <div className="relative">
+                <div className="w-8 h-12 border-2 border-cyan-500/50 rounded-full flex justify-center backdrop-blur-sm">
+                  <div className="w-1.5 h-4 bg-gradient-to-b from-cyan-400 to-purple-500 rounded-full mt-2 animate-cosmic-bounce"></div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-400/10 rounded-full blur-lg animate-pulse"></div>
               </div>
             </div>
           </div>

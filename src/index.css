@@ -90,7 +90,7 @@ p {
   line-height: 1.6;
 }
 
-/* Custom Animations */
+/* Cosmic Animations */
 @keyframes float-slow {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   33% { transform: translate(30px, -30px) rotate(120deg); }
@@ -110,15 +110,55 @@ p {
   75% { transform: translate(-25px, 25px) rotate(270deg); }
 }
 
-@keyframes pulse-glow {
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes glow-pulse {
   0%, 100% { 
     box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(139, 92, 246, 0.2);
     transform: scale(1);
   }
   50% { 
     box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(139, 92, 246, 0.4);
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes cosmic-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes orbit-1 {
+  0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+@keyframes orbit-2 {
+  0% { transform: rotate(0deg) translateX(55px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(55px) rotate(360deg); }
+}
+
+@keyframes orbit-3 {
+  0% { transform: rotate(0deg) translateX(65px) rotate(0deg); }
+  100% { transform: rotate(180deg) translateX(65px) rotate(-180deg); }
 }
 
 @keyframes fade-in-up {
@@ -159,11 +199,6 @@ p {
   }
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
 /* Animation classes */
 .animate-float-slow {
   animation: float-slow 20s ease-in-out infinite;
@@ -177,8 +212,40 @@ p {
   animation: float-fast 15s ease-in-out infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-cosmic-bounce {
+  animation: cosmic-bounce 2s ease-in-out infinite;
+}
+
+.animate-orbit-1 {
+  animation: orbit-1 10s linear infinite;
+}
+
+.animate-orbit-2 {
+  animation: orbit-2 12s linear infinite;
+}
+
+.animate-orbit-3 {
+  animation: orbit-3 8s linear infinite;
 }
 
 .animate-fade-in-up {
@@ -210,47 +277,71 @@ p {
 .delay-800 { animation-delay: 0.8s; }
 .delay-1000 { animation-delay: 1s; }
 
-/* Floating orbs positioning */
-.floating-orb {
+/* Cosmic Background Effects */
+.bg-stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Cosmic UI Elements */
+.cosmic-glow {
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+}
+
+.cosmic-pill {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cosmic-pill::before {
+  content: '';
   position: absolute;
-  top: 10%;
-  left: 10%;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(45deg, rgba(6, 182, 212, 0.5), rgba(139, 92, 246, 0.5));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
 }
 
-.floating-orb-2 {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-}
-
-.floating-orb-3 {
-  position: absolute;
-  bottom: 20%;
-  left: 60%;
-}
-
-/* Glow effects */
-.glow-text {
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-}
-
-.glow-button {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-}
-
-.glow-button:hover {
-  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
-}
-
-/* Typing animation */
-.typing-animation {
+.cosmic-button {
+  position: relative;
   overflow: hidden;
-  border-right: 2px solid #06b6d4;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #06b6d4; }
+.cosmic-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.1));
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.cosmic-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
+/* Custom utilities */
+@layer utilities {
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
 }
