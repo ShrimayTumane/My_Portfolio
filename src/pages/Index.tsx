@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from 'react';
-import { ArrowDown, Download, Mail, Linkedin, Code, Palette, Database, Globe, Github, ExternalLink, Camera, MapPin, Calendar, Monitor, Cpu, Zap, Layers, Terminal, Server, Smartphone, Lightbulb, Star, Rocket, Orbit } from 'lucide-react';
+import { ArrowDown, Download, Mail, Linkedin, Code, Database, Globe, Github, ExternalLink, Calendar, Monitor, Cpu, Zap, Terminal, Server, Lightbulb, Star, Rocket, Orbit, User, MapPin, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -12,7 +13,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'gallery', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -45,16 +46,11 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
       {/* Cosmic Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Main background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black"></div>
-        
-        {/* Large cosmic orb - top right */}
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-radial from-purple-500/30 via-purple-600/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-        
-        {/* Medium cosmic orb - bottom left */}
         <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-gradient-radial from-cyan-500/25 via-blue-600/15 to-transparent rounded-full blur-2xl animate-float-slow"></div>
         
-        {/* Small floating particles */}
+        {/* Stars */}
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
@@ -68,7 +64,7 @@ const Index = () => {
           />
         ))}
         
-        {/* Cosmic grid pattern */}
+        {/* Grid */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `
@@ -202,7 +198,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Side - Visual Elements */}
+            {/* Right Side - Cosmic Visual */}
             <div className="relative flex items-center justify-center animate-fade-in-up delay-200">
               
               {/* Large Central Circle */}
@@ -266,19 +262,25 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      <section id="about" className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <User className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-400 text-sm font-medium">Get to know me</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               About Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 animate-slide-in-left">
+            {/* Left - Text Content */}
+            <div className="space-y-8 animate-slide-in-left">
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
-                <p className="text-xl">
+                <p className="text-xl text-white font-medium">
                   I'm a passionate <span className="text-cyan-400 font-semibold">B.Tech Information Technology</span> student 
                   at Manipal University Jaipur, driven by the endless possibilities of technology.
                 </p>
@@ -292,34 +294,63 @@ const Index = () => {
                   technology that makes a meaningful impact on the world.
                 </p>
               </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-6 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">2+</div>
+                  <div className="text-gray-400">Years Learning</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">10+</div>
+                  <div className="text-gray-400">Technologies</div>
+                </div>
+              </div>
             </div>
             
-            <div className="space-y-8 animate-slide-in-right">
-              <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-white" />
+            {/* Right - Cards */}
+            <div className="space-y-6 animate-slide-in-right">
+              {/* Education Card */}
+              <div className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center group-hover:animate-pulse">
+                    <GraduationCap className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-cyan-400">Education</h3>
-                </div>
-                <div className="space-y-2 text-gray-300">
-                  <p className="font-medium text-lg">B.Tech Information Technology</p>
-                  <p className="text-purple-300">Manipal University Jaipur</p>
-                  <p className="text-gray-400">Expected Graduation: 2027</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-cyan-400 mb-2">Education</h3>
+                    <p className="font-medium text-lg text-white">B.Tech Information Technology</p>
+                    <p className="text-purple-300 font-medium">Manipal University Jaipur</p>
+                    <p className="text-gray-400 text-sm mt-1">Expected Graduation: 2027</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
+              {/* Experience Card */}
+              <div className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center group-hover:animate-pulse">
+                    <Briefcase className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-purple-400">Experience</h3>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-purple-400 mb-2">Experience</h3>
+                    <p className="font-medium text-lg text-white">Full-Stack Developer Intern</p>
+                    <p className="text-cyan-300 font-medium">OPM Corporation</p>
+                    <p className="text-gray-400 text-sm mt-1">June – August 2025</p>
+                  </div>
                 </div>
-                <div className="space-y-2 text-gray-300">
-                  <p className="font-medium text-lg">Full-Stack Developer Intern</p>
-                  <p className="text-cyan-300">OPM Corporation</p>
-                  <p className="text-gray-400">June – August 2025</p>
+              </div>
+
+              {/* Location Card */}
+              <div className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-green-400 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:animate-pulse">
+                    <MapPin className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-green-400 mb-2">Location</h3>
+                    <p className="font-medium text-lg text-white">Jaipur, Rajasthan</p>
+                    <p className="text-gray-400 text-sm mt-1">Available for remote work</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -328,16 +359,21 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 bg-gradient-to-r from-slate-900/50 to-purple-900/30 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      <section id="skills" className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Zap className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-400 text-sm font-medium">What I work with</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Tech Arsenal
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
                 category: 'Frontend', 
@@ -362,16 +398,28 @@ const Index = () => {
                 skills: ['Git', 'Docker', 'AWS', 'Linux'], 
                 icon: Terminal,
                 gradient: 'from-orange-500 to-red-600'
+              },
+              { 
+                category: 'Languages', 
+                skills: ['C++', 'C', 'JavaScript', 'Python'], 
+                icon: Code,
+                gradient: 'from-indigo-500 to-purple-600'
+              },
+              { 
+                category: 'Design', 
+                skills: ['Figma', 'UI/UX', 'Responsive Design', 'Prototyping'], 
+                icon: Globe,
+                gradient: 'from-pink-500 to-rose-600'
               }
             ].map((category, index) => (
               <div 
                 key={category.category} 
-                className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-500 animate-fade-in-up"
+                className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-500 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${category.gradient} rounded-full flex items-center justify-center group-hover:animate-pulse`}>
-                    <category.icon className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={`w-14 h-14 bg-gradient-to-r ${category.gradient} rounded-2xl flex items-center justify-center group-hover:animate-pulse`}>
+                    <category.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-cyan-400">{category.category}</h3>
                 </div>
@@ -379,10 +427,11 @@ const Index = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <li 
                       key={skill} 
-                      className="text-gray-300 hover:text-cyan-300 transition-colors duration-300 cursor-pointer"
+                      className="text-gray-300 hover:text-cyan-300 transition-colors duration-300 cursor-pointer flex items-center space-x-2"
                       style={{ animationDelay: `${index * 0.1 + skillIndex * 0.05}s` }}
                     >
-                      • {skill}
+                      <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                      <span>{skill}</span>
                     </li>
                   ))}
                 </ul>
@@ -392,17 +441,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section id="experience" className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      {/* Experience Section */}
+      <section id="experience" className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Briefcase className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-400 text-sm font-medium">My career path</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Journey
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="relative">
+          <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-400 to-purple-500 rounded-full"></div>
             
@@ -412,7 +466,7 @@ const Index = () => {
                   year: '2025',
                   title: 'Full-Stack Developer Intern',
                   company: 'OPM Corporation',
-                  description: 'Developing scalable web applications using modern technologies',
+                  description: 'Developing scalable web applications using modern technologies and contributing to innovative projects.',
                   icon: Cpu,
                   side: 'right'
                 },
@@ -420,7 +474,7 @@ const Index = () => {
                   year: '2024',
                   title: 'Tech Enthusiast',
                   company: 'Self-Learning',
-                  description: 'Mastering new frameworks and building personal projects',
+                  description: 'Mastering new frameworks, building personal projects, and exploring cutting-edge technologies.',
                   icon: Lightbulb,
                   side: 'left'
                 },
@@ -428,8 +482,8 @@ const Index = () => {
                   year: '2023',
                   title: 'Started B.Tech Journey',
                   company: 'Manipal University Jaipur',
-                  description: 'Beginning my formal education in Information Technology',
-                  icon: Monitor,
+                  description: 'Beginning my formal education in Information Technology and diving deep into programming.',
+                  icon: GraduationCap,
                   side: 'right'
                 }
               ].map((item, index) => (
@@ -439,17 +493,17 @@ const Index = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center border-4 border-slate-900 z-10">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center border-4 border-slate-900 z-10 group-hover:animate-pulse">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   
                   {/* Content Card */}
                   <div className={`w-5/12 ${item.side === 'left' ? 'pr-8' : 'pl-8'}`}>
-                    <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                      <span className="text-cyan-400 font-bold text-lg">{item.year}</span>
-                      <h3 className="text-xl font-semibold text-white mt-2">{item.title}</h3>
-                      <p className="text-purple-300 font-medium">{item.company}</p>
-                      <p className="text-gray-300 mt-3">{item.description}</p>
+                    <div className="group bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 border border-cyan-400/30 rounded-full text-cyan-400 font-bold text-sm mb-4">{item.year}</span>
+                      <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                      <p className="text-purple-300 font-medium mb-3">{item.company}</p>
+                      <p className="text-gray-300 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -460,68 +514,106 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-gradient-to-r from-slate-900/50 to-purple-900/30 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      <section id="projects" className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Rocket className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-400 text-sm font-medium">What I've built</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Featured Projects
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
           <div className="text-center animate-fade-in-up delay-200">
-            <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 rounded-full flex items-center justify-center border border-purple-500/30 backdrop-blur-sm animate-pulse-glow">
-              <Code className="h-16 w-16 text-cyan-400" />
+            <div className="relative max-w-lg mx-auto">
+              {/* Cosmic Ring */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-600/20 rounded-full border border-purple-500/30 animate-spin-slow"></div>
+              
+              {/* Inner Content */}
+              <div className="relative bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-full p-16 border border-purple-500/30 backdrop-blur-sm">
+                <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 rounded-full flex items-center justify-center border border-purple-500/30 animate-glow-pulse">
+                  <Code className="h-10 w-10 text-cyan-400" />
+                </div>
+                <h3 className="text-2xl font-semibold mb-6 text-cyan-400">Coming Soon</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  I'm currently working on some exciting projects that showcase cutting-edge 
+                  full-stack development and innovative design solutions. Stay tuned for updates!
+                </p>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-400/60 rounded-full animate-twinkle"></div>
+              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-cyan-400/60 rounded-full animate-twinkle" style={{ animationDelay: '1s' }}></div>
             </div>
-            <h3 className="text-3xl font-semibold mb-6 text-cyan-400">Coming Soon</h3>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              I'm currently working on some exciting projects that showcase cutting-edge 
-              full-stack development and innovative design solutions. Stay tuned for updates!
-            </p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-r from-slate-900/50 to-purple-900/30 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      <section id="contact" className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Mail className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-400 text-sm font-medium">Get in touch</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Let's Connect
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mt-6">
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Ready to bring your ideas to life? Let's create something amazing together.
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left - Contact Info */}
             <div className="space-y-8 animate-slide-in-left">
               <div>
-                <h3 className="text-3xl font-semibold mb-6 text-cyan-400">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-cyan-400">Get in Touch</h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                   I'm always excited to discuss new opportunities, collaborate on innovative projects, 
                   or just chat about the latest in technology and design.
                 </p>
               </div>
               
-              <a 
-                href="https://linkedin.com/in/shrimay-tumane-6b5a96277"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-purple-900/20 hover:from-slate-700/50 hover:to-purple-800/30 transition-all duration-300 border border-purple-500/30 backdrop-blur-sm hover:scale-105"
-              >
-                <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                  <Linkedin className="h-7 w-7 text-white" />
+              {/* Contact Methods */}
+              <div className="space-y-6">
+                <a 
+                  href="https://linkedin.com/in/shrimay-tumane-6b5a96277"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-purple-900/20 hover:from-slate-700/50 hover:to-purple-800/30 transition-all duration-300 border border-purple-500/30 backdrop-blur-sm hover:scale-105"
+                >
+                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center group-hover:animate-pulse">
+                    <Linkedin className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-lg text-cyan-400">LinkedIn</p>
+                    <p className="text-gray-300">Connect with me professionally</p>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors ml-auto" />
+                </a>
+
+                <div className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-purple-900/20 border border-purple-500/30 backdrop-blur-sm">
+                  <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                    <Mail className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-lg text-purple-400">Email</p>
+                    <p className="text-gray-300">shrimay.tumane@example.com</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium text-lg text-cyan-400">LinkedIn</p>
-                  <p className="text-gray-300">Connect with me professionally</p>
-                </div>
-              </a>
+              </div>
             </div>
             
-            <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-2xl p-8 border border-purple-500/30 backdrop-blur-sm animate-slide-in-right">
+            {/* Right - Contact Form */}
+            <div className="bg-gradient-to-br from-slate-800/50 to-purple-900/20 rounded-3xl p-8 border border-purple-500/30 backdrop-blur-sm animate-slide-in-right">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-3 text-cyan-400">Name</label>
@@ -558,7 +650,7 @@ const Index = () => {
                 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300 glow-button"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300"
                 >
                   <Zap className="mr-2 h-4 w-4" />
                   Send Message
@@ -571,7 +663,15 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-12 border-t border-purple-500/20 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+              <Rocket className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Shrimay
+            </span>
+          </div>
           <p className="text-gray-400 text-lg">
             © 2024 Shrimay Tumane. Crafted with 
             <span className="text-red-400 mx-1">♥</span> 
