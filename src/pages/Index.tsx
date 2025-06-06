@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Linkedin, Code, Database, Globe, Github, ExternalLink, Calendar, Monitor, Cpu, Zap, Terminal, Server, Lightbulb, Star, Rocket, Orbit, User, MapPin, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -43,18 +42,28 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
-      {/* Cosmic Background */}
+    <div className="min-h-screen text-white overflow-x-hidden relative">
+      {/* Enhanced Futuristic Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black"></div>
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-radial from-purple-500/30 via-purple-600/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-gradient-radial from-cyan-500/25 via-blue-600/15 to-transparent rounded-full blur-2xl animate-float-slow"></div>
+        {/* Multi-layered gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 via-purple-950 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-950/30 via-transparent to-fuchsia-950/30"></div>
         
-        {/* Stars */}
-        {[...Array(50)].map((_, i) => (
+        {/* Animated gradient orbs */}
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-gradient-radial from-purple-500/20 via-fuchsia-600/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-gradient-radial from-cyan-500/25 via-blue-600/15 to-transparent rounded-full blur-2xl animate-float-slow"></div>
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-gradient-radial from-indigo-500/15 via-purple-600/10 to-transparent rounded-full blur-3xl animate-float-reverse"></div>
+        
+        {/* Enhanced Stars with different sizes and colors */}
+        {[...Array(80)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-60 animate-twinkle"
+            className={`absolute rounded-full animate-twinkle ${
+              i % 4 === 0 ? 'w-1.5 h-1.5 bg-cyan-300' :
+              i % 4 === 1 ? 'w-1 h-1 bg-purple-300' :
+              i % 4 === 2 ? 'w-0.5 h-0.5 bg-fuchsia-300' :
+              'w-1 h-1 bg-white'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -64,20 +73,27 @@ const Index = () => {
           />
         ))}
         
-        {/* Grid */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Futuristic Grid */}
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `
-              linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)
+              linear-gradient(rgba(6, 182, 212, 0.4) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.4) 1px, transparent 1px),
+              linear-gradient(rgba(236, 72, 153, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(236, 72, 153, 0.2) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px'
+            backgroundSize: '100px 100px, 100px 100px, 50px 50px, 50px 50px'
           }}></div>
         </div>
+
+        {/* Floating geometric shapes */}
+        <div className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-cyan-400/50 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/3 left-1/5 w-6 h-6 border-2 border-purple-400/50 animate-spin-reverse"></div>
+        <div className="absolute top-2/3 right-1/5 w-4 h-8 bg-gradient-to-t from-fuchsia-500/30 to-cyan-500/30 animate-float-fast"></div>
       </div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-purple-500/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-purple-500/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
@@ -606,7 +622,7 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="font-medium text-lg text-purple-400">Email</p>
-                    <p className="text-gray-300">shrimay.tumane@example.com</p>
+                    <p className="text-gray-300">shrimaytumane@gmail.com</p>
                   </div>
                 </div>
               </div>
