@@ -90,6 +90,111 @@ p {
   line-height: 1.6;
 }
 
+/* Professional Developer Animations */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes code-typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes neural-network {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    transform: scale(1.05) rotate(90deg);
+    filter: hue-rotate(90deg);
+  }
+  50% { 
+    transform: scale(1.1) rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    transform: scale(1.05) rotate(270deg);
+    filter: hue-rotate(270deg);
+  }
+  100% { 
+    transform: scale(1) rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes data-stream {
+  0% { 
+    background-position: 0% 0%;
+    opacity: 0.3;
+  }
+  50% {
+    background-position: 100% 100%;
+    opacity: 0.8;
+  }
+  100% { 
+    background-position: 200% 200%;
+    opacity: 0.3;
+  }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% { 
+    opacity: 1;
+    filter: brightness(1) contrast(1);
+  }
+  2% { 
+    opacity: 0.8;
+    filter: brightness(1.2) contrast(1.1);
+  }
+  4% { 
+    opacity: 1;
+    filter: brightness(0.9) contrast(0.9);
+  }
+  8% { 
+    opacity: 0.9;
+    filter: brightness(1.1) contrast(1);
+  }
+}
+
+@keyframes quantum-pulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    transform: scale(1);
+  }
+  70% { 
+    box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    transform: scale(1.05);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes circuit-flow {
+  0% { 
+    stroke-dashoffset: 100;
+    opacity: 0.3;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% { 
+    stroke-dashoffset: -100;
+    opacity: 0.3;
+  }
+}
+
 /* Enhanced Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -191,7 +296,45 @@ p {
   to { transform: rotate(360deg); }
 }
 
-/* Animation classes */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Professional Animation Classes */
+.animate-matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+}
+
+.animate-code-typing {
+  animation: code-typing 2s ease-in-out infinite;
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s infinite;
+}
+
+.animate-neural-network {
+  animation: neural-network 8s ease-in-out infinite;
+}
+
+.animate-data-stream {
+  animation: data-stream 4s linear infinite;
+}
+
+.animate-hologram-flicker {
+  animation: hologram-flicker 3s ease-in-out infinite;
+}
+
+.animate-quantum-pulse {
+  animation: quantum-pulse 2s ease-in-out infinite;
+}
+
+.animate-circuit-flow {
+  animation: circuit-flow 3s ease-in-out infinite;
+}
+
+/* Enhanced Animation classes */
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -246,6 +389,10 @@ p {
   animation: rotate-slow 20s linear infinite;
 }
 
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
 /* Delay classes */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
@@ -256,7 +403,7 @@ p {
 .delay-800 { animation-delay: 0.8s; }
 .delay-1000 { animation-delay: 1s; }
 
-/* Hover animations */
+/* Professional Hover Effects */
 .hover-scale {
   transition: transform 0.3s ease;
 }
@@ -273,9 +420,34 @@ p {
   filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
 }
 
+.hover-neural:hover {
+  animation: neural-network 2s ease-in-out;
+}
+
+.hover-quantum:hover {
+  animation: quantum-pulse 1s ease-in-out;
+}
+
 /* Interactive elements */
 .interactive-element {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.interactive-element:hover::before {
+  left: 100%;
 }
 
 .interactive-element:hover {
@@ -309,4 +481,110 @@ p {
 
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Professional code-like effects */
+.code-matrix {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 0, 0.1) 0%,
+    rgba(0, 200, 0, 0.05) 50%,
+    rgba(0, 255, 0, 0.1) 100%
+  );
+  background-size: 100px 100%;
+  animation: data-stream 2s linear infinite;
+}
+
+.terminal-screen {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff00;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.3),
+    inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.neural-connection {
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(139, 92, 246, 0.2) 50%,
+    rgba(59, 130, 246, 0.2) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  position: relative;
+}
+
+.neural-connection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(59, 130, 246, 0.1) 2px,
+    rgba(59, 130, 246, 0.1) 4px
+  );
+  animation: data-stream 3s linear infinite;
+}
+
+/* Scroll-triggered animations */
+@keyframes reveal-text {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal {
+  animation: reveal-text 0.6s ease-out forwards;
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .animate-float {
+    animation-duration: 4s;
+  }
+  
+  .animate-glow-pulse {
+    animation-duration: 2s;
+  }
+  
+  .interactive-element:hover {
+    transform: none;
+  }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Accessibility considerations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-slow,
+  .animate-glow-pulse,
+  .animate-twinkle,
+  .animate-rotate-slow,
+  .animate-spin-slow,
+  .animate-gradient,
+  .animate-neural-network,
+  .animate-data-stream,
+  .animate-hologram-flicker,
+  .animate-quantum-pulse,
+  .animate-circuit-flow {
+    animation: none;
+  }
+  
+  .interactive-element {
+    transition: none;
+  }
 }

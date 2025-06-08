@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Linkedin, Code, Database, Globe, Github, ExternalLink, Calendar, Monitor, Cpu, Zap, Terminal, Server, Lightbulb, Star, Rocket, Orbit, User, MapPin, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -463,19 +464,19 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
-              <Briefcase className="w-4 h-4 text-red-400" />
-              <span className="text-red-400 text-sm font-medium">My career path</span>
+            <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Briefcase className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm font-medium">My career path</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Journey
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-400 to-red-500 rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 to-purple-500 rounded-full"></div>
             
             <div className="space-y-16">
               {[
@@ -510,16 +511,16 @@ const Index = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Node */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center border-4 border-slate-900 z-10 group-hover:animate-pulse">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center border-4 border-slate-900 z-10 group-hover:animate-pulse">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   
                   {/* Content Card */}
                   <div className={`w-5/12 ${item.side === 'left' ? 'pr-8' : 'pl-8'}`}>
-                    <div className="group bg-gradient-to-br from-slate-800/50 to-red-900/20 rounded-3xl p-8 border border-red-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
-                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-orange-400/20 to-red-400/20 border border-orange-400/30 rounded-full text-orange-400 font-bold text-sm mb-4">{item.year}</span>
+                    <div className="group bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-3xl p-8 border border-blue-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-blue-400/20 to-purple-400/20 border border-blue-400/30 rounded-full text-blue-400 font-bold text-sm mb-4">{item.year}</span>
                       <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                      <p className="text-red-300 font-medium mb-3">{item.company}</p>
+                      <p className="text-blue-300 font-medium mb-3">{item.company}</p>
                       <p className="text-gray-300 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -535,27 +536,27 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
-              <Rocket className="w-4 h-4 text-red-400" />
-              <span className="text-red-400 text-sm font-medium">What I've built</span>
+            <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Rocket className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm font-medium">What I've built</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Featured Projects
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
           <div className="text-center animate-fade-in-up delay-200">
             <div className="relative max-w-lg mx-auto">
               {/* Cosmic Ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-red-600/20 rounded-full border border-red-500/30 animate-spin-slow"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full border border-blue-500/30 animate-spin-slow"></div>
               
               {/* Inner Content */}
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-red-900/20 rounded-full p-16 border border-red-500/30 backdrop-blur-sm">
-                <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full flex items-center justify-center border border-red-500/30 animate-glow-pulse">
-                  <Code className="h-10 w-10 text-orange-400" />
+              <div className="relative bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-full p-16 border border-blue-500/30 backdrop-blur-sm">
+                <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full flex items-center justify-center border border-blue-500/30 animate-glow-pulse">
+                  <Code className="h-10 w-10 text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-6 text-orange-400">Coming Soon</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-blue-400">Coming Soon</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
                   I'm currently working on some exciting projects that showcase cutting-edge 
                   full-stack development and innovative design solutions. Stay tuned for updates!
@@ -563,8 +564,8 @@ const Index = () => {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-400/60 rounded-full animate-twinkle"></div>
-              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-orange-400/60 rounded-full animate-twinkle" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400/60 rounded-full animate-twinkle"></div>
+              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-400/60 rounded-full animate-twinkle" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>
@@ -575,14 +576,14 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
-              <Mail className="w-4 h-4 text-red-400" />
-              <span className="text-red-400 text-sm font-medium">Get in touch</span>
+            <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3 backdrop-blur-sm mb-8">
+              <Mail className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm font-medium">Get in touch</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Let's Connect
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Ready to bring your ideas to life? Let's create something amazing together.
             </p>
@@ -592,7 +593,7 @@ const Index = () => {
             {/* Left - Contact Info */}
             <div className="space-y-8 animate-slide-in-left">
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-orange-400">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-blue-400">Get in Touch</h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                   I'm always excited to discuss new opportunities, collaborate on innovative projects, 
                   or just chat about the latest in technology and design.
@@ -605,24 +606,24 @@ const Index = () => {
                   href="https://linkedin.com/in/shrimay-tumane-6b5a96277"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-red-900/20 hover:from-slate-700/50 hover:to-red-800/30 transition-all duration-300 border border-red-500/30 backdrop-blur-sm hover:scale-105"
+                  className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-blue-900/20 hover:from-slate-700/50 hover:to-blue-800/30 transition-all duration-300 border border-blue-500/30 backdrop-blur-sm hover:scale-105"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full flex items-center justify-center group-hover:animate-pulse">
+                  <div className="w-14 h-14 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center group-hover:animate-pulse">
                     <Linkedin className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-lg text-orange-400">LinkedIn</p>
+                    <p className="font-medium text-lg text-blue-400">LinkedIn</p>
                     <p className="text-gray-300">Connect with me professionally</p>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-orange-400 transition-colors ml-auto" />
+                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors ml-auto" />
                 </a>
 
-                <div className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-red-900/20 border border-red-500/30 backdrop-blur-sm">
-                  <div className="w-14 h-14 bg-gradient-to-r from-red-400 to-orange-500 rounded-full flex items-center justify-center">
+                <div className="group flex items-center space-x-4 p-6 rounded-2xl bg-gradient-to-br from-slate-800/50 to-blue-900/20 border border-blue-500/30 backdrop-blur-sm">
+                  <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full flex items-center justify-center">
                     <Mail className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-lg text-red-400">Email</p>
+                    <p className="font-medium text-lg text-purple-400">Email</p>
                     <p className="text-gray-300">shrimaytumane@gmail.com</p>
                   </div>
                 </div>
@@ -630,44 +631,44 @@ const Index = () => {
             </div>
             
             {/* Right - Contact Form */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-red-900/20 rounded-3xl p-8 border border-red-500/30 backdrop-blur-sm animate-slide-in-right">
+            <div className="bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-3xl p-8 border border-blue-500/30 backdrop-blur-sm animate-slide-in-right">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-3 text-orange-400">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-3 text-blue-400">Name</label>
                   <Input
                     id="name"
                     type="text"
                     required
-                    className="bg-slate-800/50 border-red-500/30 focus:border-orange-400 text-white h-12 rounded-xl"
+                    className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white h-12 rounded-xl"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-3 text-orange-400">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-3 text-blue-400">Email</label>
                   <Input
                     id="email"
                     type="email"
                     required
-                    className="bg-slate-800/50 border-red-500/30 focus:border-orange-400 text-white h-12 rounded-xl"
+                    className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white h-12 rounded-xl"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-3 text-orange-400">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-3 text-blue-400">Message</label>
                   <Textarea
                     id="message"
                     required
                     rows={5}
-                    className="bg-slate-800/50 border-red-500/30 focus:border-orange-400 text-white resize-none rounded-xl"
+                    className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white resize-none rounded-xl"
                     placeholder="Tell me about your project..."
                   />
                 </div>
                 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300"
                 >
                   <Zap className="mr-2 h-4 w-4" />
                   Send Message
