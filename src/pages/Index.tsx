@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Linkedin, Code, Database, Globe, Github, ExternalLink, Calendar, Monitor, Cpu, Zap, Terminal, Server, Lightbulb, Star, Rocket, Orbit, User, MapPin, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,9 +5,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -34,12 +35,44 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
-    });
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    const templateParams = {
+      from_name: formData.get('name') as string,
+      from_email: formData.get('email') as string,
+      message: formData.get('message') as string,
+      to_name: 'Shrimay Tumane',
+    };
+
+    try {
+      await emailjs.send(
+        'template_mn8j1x6', // service ID
+        'template_mn8j1x6', // template ID
+        templateParams,
+        '1LHsd0PbpqCUfYiu6' // public key
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thanks for reaching out. I'll get back to you soon!",
+      });
+      
+      form.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Error Sending Message",
+        description: "There was a problem sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -637,8 +670,10 @@ const Index = () => {
                   <label htmlFor="name" className="block text-sm font-medium mb-3 text-blue-400">Name</label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     required
+                    disabled={isSubmitting}
                     className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white h-12 rounded-xl"
                     placeholder="Your name"
                   />
@@ -648,8 +683,10 @@ const Index = () => {
                   <label htmlFor="email" className="block text-sm font-medium mb-3 text-blue-400">Email</label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
+                    disabled={isSubmitting}
                     className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white h-12 rounded-xl"
                     placeholder="your.email@example.com"
                   />
@@ -659,7 +696,9 @@ const Index = () => {
                   <label htmlFor="message" className="block text-sm font-medium mb-3 text-blue-400">Message</label>
                   <Textarea
                     id="message"
+                    name="message"
                     required
+                    disabled={isSubmitting}
                     rows={5}
                     className="bg-slate-800/50 border-blue-500/30 focus:border-blue-400 text-white resize-none rounded-xl"
                     placeholder="Tell me about your project..."
@@ -668,10 +707,20 @@ const Index = () => {
                 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 h-12 text-base font-medium rounded-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  <Zap className="mr-2 h-4 w-4" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Zap className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
