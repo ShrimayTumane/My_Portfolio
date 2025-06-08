@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Linkedin, Code, Database, Globe, Github, ExternalLink, Calendar, Monitor, Cpu, Zap, Terminal, Server, Lightbulb, Star, Rocket, Orbit, User, MapPin, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -50,8 +51,10 @@ const Index = () => {
     };
 
     try {
+      console.log('Sending email with params:', templateParams);
+      
       await emailjs.send(
-        'template_mn8j1x6', // service ID
+        'service_d6p1hbs', // Correct service ID format
         'template_mn8j1x6', // template ID
         templateParams,
         '1LHsd0PbpqCUfYiu6' // public key
@@ -67,7 +70,7 @@ const Index = () => {
       console.error('EmailJS error:', error);
       toast({
         title: "Error Sending Message",
-        description: "There was a problem sending your message. Please try again or contact me directly.",
+        description: "There was a problem sending your message. Please try again or contact me directly at shrimaytumane@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -269,7 +272,8 @@ const Index = () => {
                       <img 
                         src="https://ik.imagekit.io/rmlbayysp/1749281936895-IMG_6063_mEUHD-9ABs.HEIC"
                         alt="Shrimay Tumane"
-                        className="w-44 h-44 rounded-full object-cover hover-scale"
+                        className="w-44 h-44 rounded-full object-cover object-center hover-scale scale-110"
+                        style={{ objectPosition: 'center 20%' }}
                       />
                     </div>
                   </div>
