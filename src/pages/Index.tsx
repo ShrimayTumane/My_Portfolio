@@ -51,10 +51,10 @@ const Index = () => {
 
     try {
       await emailjs.send(
-        'template_mn8j1x6', // service ID
-        'template_mn8j1x6', // template ID
+        'service_r0f3xvl', // service ID
+        'template_58kxhzd', // template ID
         templateParams,
-        '1LHsd0PbpqCUfYiu6' // public key
+        'SgEqE2zmMXInsiqW4' // public key
       );
 
       toast({
@@ -222,6 +222,14 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   className="border-2 border-blue-500/50 text-blue-300 hover:bg-blue-500/10 px-8 py-4 text-lg font-medium rounded-2xl interactive-element backdrop-blur-sm"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/Shrimay_Tumane_CV.pdf';
+                    link.download = 'Shrimay_Tumane_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
@@ -579,28 +587,78 @@ const Index = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
           </div>
           
-          <div className="text-center animate-fade-in-up delay-200">
-            <div className="relative max-w-lg mx-auto">
-              {/* Cosmic Ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full border border-blue-500/30 animate-spin-slow"></div>
+          <div className="grid md:grid-cols-2 gap-10 animate-fade-in-up delay-200">
+            {/* Geo Quest Project */}
+            <div className="group bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-3xl p-8 border border-blue-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 interactive-element">
+              <div className="relative overflow-hidden rounded-xl mb-6 border border-blue-500/30">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img 
+                  src="https://geo-quest-one.vercel.app/og-image.png" 
+                  alt="Geo Quest Game" 
+                  className="w-full h-64 object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://placehold.co/600x400/1e293b/38bdf8?text=Geo+Quest";
+                  }}
+                />
+                <div className="absolute top-4 right-4 bg-blue-500/80 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                  <Globe className="h-5 w-5 text-white" />
+                </div>
+              </div>
               
-              {/* Inner Content */}
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-full p-16 border border-blue-500/30 backdrop-blur-sm">
-                <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full flex items-center justify-center border border-blue-500/30 animate-glow-pulse">
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-2xl font-semibold text-blue-400">Geo Quest</h3>
+                  <div className="flex space-x-3">
+                    <a href="https://github.com/shrimaytumane/geo-quest" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-slate-700 p-2 rounded-full transition-colors duration-300">
+                      <Github className="h-5 w-5 text-gray-300" />
+                    </a>
+                    <a href="https://geo-quest-one.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full transition-colors duration-300">
+                      <ExternalLink className="h-5 w-5 text-white" />
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 leading-relaxed">
+                  An interactive geography game that challenges players to guess countries based on their shapes. Features multiple difficulty levels, regional filtering, and a time-based scoring system.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">React</span>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">TypeScript</span>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">Vercel</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Coming Soon Project */}
+            <div className="group bg-gradient-to-br from-slate-800/50 to-blue-900/20 rounded-3xl p-8 border border-blue-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 interactive-element">
+              <div className="relative overflow-hidden rounded-xl mb-6 border border-blue-500/30 flex items-center justify-center h-64 bg-gradient-to-br from-slate-900/80 to-blue-900/30">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full flex items-center justify-center border border-blue-500/30 animate-glow-pulse">
                   <Code className="h-10 w-10 text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-6 text-blue-400">Coming Soon</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-blue-400">More Coming Soon</h3>
+                <p className="text-gray-300 leading-relaxed">
                   I'm currently working on some exciting projects that showcase cutting-edge 
                   full-stack development and innovative design solutions. Stay tuned for updates!
                 </p>
+                
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">Next.js</span>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">React</span>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-medium">Node.js</span>
+                </div>
               </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400/60 rounded-full animate-twinkle"></div>
-              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-400/60 rounded-full animate-twinkle" style={{ animationDelay: '1s' }}></div>
             </div>
+            
           </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400/60 rounded-full animate-twinkle"></div>
+          <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-400/60 rounded-full animate-twinkle" style={{ animationDelay: '1s' }}></div>
         </div>
       </section>
 
@@ -741,7 +799,7 @@ const Index = () => {
           </div>
           <p className="text-gray-400 text-lg">
             © 2024 Shrimay Tumane. Crafted with 
-            <span className="text-red-400 mx-1">♥</span> 
+            <span className="text-red-400 mx-1"></span> 
             and cutting-edge technology.
           </p>
         </div>
