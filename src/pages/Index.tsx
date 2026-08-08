@@ -1018,7 +1018,7 @@ const Index = () => {
                 description: 'Interactive HR attrition analytics dashboard built in Tableau analyzing employee turnover patterns across 1,470 employees.',
                 tech: ['Tableau', 'Excel', 'Data Analysis', 'Visualization'],
                 github: 'https://github.com/ShrimayTumane/HR-Attrition-Analytics-Tableau',
-                live: '#'
+                live: 'https://public.tableau.com/app/profile/shrimay.tumane/viz/HRAttritionAnalyticsDashboardbyShrimayTumane/HRAnalyticsDashboard'
               },
               {
                 name: 'Portfolio',
