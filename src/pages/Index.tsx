@@ -997,21 +997,21 @@ const Index = () => {
                 description: 'A comprehensive web application that allows villagers to report issues like broken streetlights, water supply problems, and road damage with real-time dashboard.',
                 tech: ['React', 'Node.js', 'MongoDB', 'Express'],
                 github: 'https://github.com/ShrimayTumane/Gram_Seva',
-                live: 'https://gram-seva.vercel.app/'
+                live: 'https://gram-seva-smoky.vercel.app/'
               },
               {
                 name: 'JobShield',
                 description: 'Job posting fraud detection system using machine learning algorithms to identify suspicious job postings and protect job seekers.',
                 tech: ['Python', 'ML', 'Pandas', 'Scikit-learn'],
                 github: 'https://github.com/ShrimayTumane/JobShield',
-                live: 'https://jobshield.vercel.app/'
+                live: 'https://jobshield-dashboard.netlify.app/'
               },
               {
                 name: 'Net-Guard',
                 description: 'Network security monitoring tool that detects and alerts on potential security threats in real-time with comprehensive reporting.',
                 tech: ['Python', 'Network Security', 'Flask', 'SQLite'],
                 github: 'https://github.com/ShrimayTumane/Net-Guard',
-                live: '#'
+                live: 'https://net-guard-seven.vercel.app/'
               },
               {
                 name: 'HR Analytics',
