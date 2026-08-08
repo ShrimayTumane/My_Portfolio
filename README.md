@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# Shrimay Tumane - Portfolio
 
-## Project info
+A modern, premium portfolio website built with cutting-edge technologies and smooth animations.
 
-**URL**: https://lovable.dev/projects/8da6ec0b-3471-4e32-a16b-9a1a6e1bfe19
+## Tech Stack
 
-## How can I edit this code?
+- **Vite** - Build tool and dev server
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI components
+- **Framer Motion** - Animations
+- **Lucide Icons** - Icon library
+- **EmailJS** - Contact form functionality
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Premium Design**: Glassmorphism, smooth gradients, and modern aesthetics
+- **Interactive Animations**: Smooth scroll animations, hover effects, and transitions
+- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
+- **Split Hero Section**: Animated job title rotation and code window visualization
+- **Project Showcase**: Featured project with detailed stats and project grid
+- **Contact Form**: Functional contact form with EmailJS integration
+- **Mouse Spotlight Effect**: Interactive cursor-following gradient
+- **Animated Timeline**: Experience section with smooth animations
+- **Skills Dashboard**: Interactive skill cards with experience levels
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8da6ec0b-3471-4e32-a16b-9a1a6e1bfe19) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+1. Clone the repository:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <repository-url>
+cd shrimay-portfolio-glow
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```sh
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Running the Project
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Start the development server:
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173` (or the next available port).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building for Production
 
-**Use GitHub Codespaces**
+Create an optimized production build:
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Preview the production build:
+```sh
+npm run preview
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+shrimay-portfolio-glow/
+├── src/
+│   ├── components/
+│   │   └── ui/          # shadcn/ui components
+│   ├── pages/
+│   │   └── Index.tsx    # Main portfolio page
+│   ├── hooks/
+│   │   └── use-toast.ts # Custom hooks
+│   └── main.tsx         # App entry point
+├── public/              # Static assets
+└── package.json
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Configuration
 
-## How can I deploy this project?
+### EmailJS Setup
 
-Simply open [Lovable](https://lovable.dev/projects/8da6ec0b-3471-4e32-a16b-9a1a6e1bfe19) and click on Share -> Publish.
+To enable the contact form, configure EmailJS:
 
-## Can I connect a custom domain to my Lovable project?
+1. Sign up at [EmailJS](https://www.emailjs.com/)
+2. Create a new email service
+3. Update the EmailJS configuration in `src/pages/Index.tsx`:
+   - Replace `YOUR_SERVICE_ID` with your service ID
+   - Replace `YOUR_TEMPLATE_ID` with your template ID
+   - Replace `YOUR_PUBLIC_KEY` with your public key
 
-Yes, you can!
+## Scripts
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+© 2025 Shrimay Tumane. All rights reserved.
+
+---
+
+Built with ❤️ using React, TypeScript, and Framer Motion
