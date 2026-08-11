@@ -1033,6 +1033,13 @@ const Index = () => {
                 tech: ['Python', 'Tableau', 'Analytics', 'ML', 'Data Viz'],
                 github: 'https://github.com/ShrimayTumane/JobShield_Dashboard',
                 live: '#'
+              },
+              {
+                name: 'Qatar Airways Network Intelligence',
+                description: 'Advanced network intelligence system for Qatar Airways analyzing flight patterns, route optimization, and operational efficiency with data-driven insights.',
+                tech: ['Python', 'Network Analysis', 'Data Science', 'Visualization'],
+                github: 'https://github.com/ShrimayTumane/Qatar-Airways-Network-Intelligence',
+                live: 'https://public.tableau.com/app/profile/shrimay.tumane/viz/Book1_17864051986490/QatarAirwaysNetworkIntelligence?publish=yes'
               }
             ].map((project, index) => (
               <motion.div
